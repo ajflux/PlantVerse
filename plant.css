@@ -1,0 +1,303 @@
+/* Mobile-first responsive design */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif; /* Clear, accessible font */
+}
+
+body {
+    background-color: #f0f8f0; /* Light green-nature theme */
+    color: #2d5016; /* Dark green for contrast */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #1a2e1a; /* Dark green */
+    color: #d4f4d4; /* Light green */
+}
+
+header {
+    background: linear-gradient(135deg, #4caf50, #2e7d32);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    animation: fadeIn 1s ease-in;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+nav a, #mode-toggle {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+nav a:hover, #mode-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.search-section {
+    padding: 1rem;
+    text-align: center;
+}
+
+#search-bar {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.plant-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.plant-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: slideUp 0.5s ease-out;
+}
+
+.plant-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.plant-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.plant-card h3 {
+    padding: 0.5rem;
+}
+
+.plant-card p {
+    padding: 0 0.5rem 0.5rem;
+}
+
+.categories {
+    padding: 1rem;
+    background: #e8f5e8;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.category-card {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.category-card:hover {
+    background: #c8e6c9;
+}
+
+.map-section {
+    padding: 1rem;
+}
+
+#world-map {
+    height: 400px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #4caf50;
+    color: white;
+}
+
+/* Dark mode overrides */
+.dark-mode .plant-card, .dark-mode .category-card {
+    background: #2d5016;
+    color: #d4f4d4;
+}
+
+.dark-mode .categories {
+    background: #1a2e1a;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    nav {
+        justify-content: space-between;
+    }
+    .plant-cards {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+/* =========================================
+   Explore Plants by Region Section
+========================================= */
+
+.regions-section {
+  padding: 80px 20px;
+  background-color: #0b1c10; /* Dark earthy green background */
+  color: #ffffff;
+}
+
+.regions-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.regions-heading {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #4ade80; /* Vibrant bright green */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.regions-subheading {
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #a3b8a8; /* Soft muted green-grey */
+}
+
+/* Grid Layout */
+.regions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+/* Region Cards */
+.region-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+
+/* GROW HOVER EFFECT */
+.region-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(74, 222, 128, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(74, 222, 128, 0.5);
+}
+
+.region-image {
+  width: 100%;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  background-color: #1a3320; /* Fallback color */
+}
+
+/* Images using URL strings */
+.tropical-img {
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');
+}
+.desert-img {
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');
+}
+.temperate-img {
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');
+}
+.tundra-img {
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1518182170546-076616fdacfb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');
+}
+
+.region-content {
+  padding: 25px 20px;
+  text-align: left;
+}
+
+.region-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.region-content p {
+  font-size: 0.95rem;
+  color: #c7d1c9;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.explore-btn {
+  display: inline-block;
+  padding: 8px 0;
+  color: #4ade80;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.explore-btn::after {
+  content: '→';
+  margin-left: 5px;
+  transition: margin-left 0.3s;
+}
+
+.region-card:hover .explore-btn {
+  color: #22c55e;
+}
+
+.region-card:hover .explore-btn::after {
+  margin-left: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .regions-heading {
+    font-size: 2rem;
+  }
+}
