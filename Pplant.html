@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlantVerse - Encyclopedia of Plants on Earth</title>
+    <meta name="description" content="Discover the world's plants: trees, herbs, flowers, and more. Search, filter, and explore with interactive maps.">
+    <meta name="keywords" content="plants, encyclopedia, trees, herbs, flowers, medicinal plants, ecology">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "PlantVerse",
+        "url": "https://plantverse.com",
+        "description": "A comprehensive encyclopedia of all plants on Earth."
+    }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+    <link rel="stylesheet" href="plant.css">
+    <link rel="stylesheet" href="Plant.js">
+    <header>
+        <h1>PlantVerse</h1>
+        <p>Encyclopedia of All Plants on Earth</p>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#map">Explore Map</a>
+            <a href="admin.html">Admin Panel</a>
+            <button id="mode-toggle">Toggle Dark Mode</button>
+        </nav>
+    </header>
+
+    <main id="home">
+        <section class="search-section">
+            <input type="text" id="search-bar" placeholder="Search by name, scientific name, region, or type..." aria-label="Search plants">
+            <div class="filters">
+                <label><input type="checkbox" class="filter" value="medicinal"> Medicinal</label>
+                <label><input type="checkbox" class="filter" value="edible"> Edible</label>
+                <label><input type="checkbox" class="filter" value="indoor"> Indoor</label>
+                <label><input type="checkbox" class="filter" value="endangered"> Endangered</label>
+                <label><input type="checkbox" class="filter" value="aquatic"> Aquatic</label>
+            </div>
+        </section>
+
+        <section class="plant-cards" id="plant-cards">
+            <!-- Plant cards will be dynamically inserted here -->
+        </section>
+    </main>
+
+    <section id="categories" class="categories">
+        <h2>Categories</h2>
+        <div class="category-grid">
+            <div class="category-card" data-category="medicinal">
+                <h3>Medicinal Plants</h3>
+                <p>Plants with healing properties.</p>
+            </div>
+            <div class="category-card" data-category="trees">
+                <h3>Forest Trees</h3>
+                <p>Majestic trees of the forests.</p>
+            </div>
+            <div class="category-card" data-category="indoor">
+                <h3>Indoor Plants</h3>
+                <p>Perfect for home gardens.</p>
+            </div>
+            <div class="category-card" data-category="crops">
+                <h3>Crops</h3>
+                <p>Agricultural essentials.</p>
+            </div>
+            <div class="category-card" data-category="flowers">
+                <h3>Flowers</h3>
+                <p>Beautiful blooms.</p>
+            </div>
+            <div class="category-card" data-category="rare">
+                <h3>Rare Plants</h3>
+                <p>Endangered and unique species.</p>
+            </div>
+        </div>
+    </section>
+
+   <!-- <section id="map" class="map-section">
+        <h2>Explore Plants by Region</h2>
+        <div id="world-map"></div>
+    </section>--> <!-- Explore Plants by Region Section -->
+<section id="explore-regions" class="regions-section">
+  <div class="regions-container">
+    <h2 class="regions-heading">Explore Plants by Region</h2>
+    <p class="regions-subheading">Discover unique flora adapted to different climates around the world.</p>
+    
+    <div class="regions-grid">
+      <!-- Region Card 1: Tropical Rainforest -->
+      <div class="region-card">
+        <div class="region-image tropical-img"></div>
+        <div class="region-content">
+          <h3>Tropical Rainforest</h3>
+          <p>Home to exotic orchids, massive ferns, and towering canopy trees.</p>
+          <a href="#" class="explore-btn">Explore Tropical</a>
+        </div>
+      </div>
+
+      <!-- Region Card 2: Desert -->
+      <div class="region-card">
+        <div class="region-image desert-img"></div>
+        <div class="region-content">
+          <h3>Desert</h3>
+          <p>Explore resilient succulents, cacti, and drought-tolerant shrubs.</p>
+          <a href="#" class="explore-btn">Explore Desert</a>
+        </div>
+      </div>
+
+      <!-- Region Card 3: Temperate Forest -->
+      <div class="region-card">
+        <div class="region-image temperate-img"></div>
+        <div class="region-content">
+          <h3>Temperate Forest</h3>
+          <p>Discover oak, maple, and a lush understory of mosses and wildflowers.</p>
+          <a href="#" class="explore-btn">Explore Temperate</a>
+        </div>
+      </div>
+
+      <!-- Region Card 4: Tundra -->
+      <div class="region-card">
+        <div class="region-image tundra-img"></div>
+        <div class="region-content">
+          <h3>Tundra & Alpine</h3>
+          <p>Hardy lichens, vibrant mosses, and dwarf shrubs surviving extreme cold.</p>
+          <a href="#" class="explore-btn">Explore Tundra</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+    <footer>
+        <p>&copy; 2023 PlantVerse. For educational purposes.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
